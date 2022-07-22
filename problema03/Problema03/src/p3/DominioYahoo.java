@@ -9,8 +9,7 @@ package p3;
  *
  * @author reroes
  */
-public class DominioGmail extends Dominio{
-    
+public class DominioYahoo extends Dominio{
     @Override
     public void establecerDominio(String g){
         dominio = g;
@@ -19,5 +18,4 @@ public class DominioGmail extends Dominio{
     public String toString(){
         return String.format("%s", dominio);
     }
-    
 }
