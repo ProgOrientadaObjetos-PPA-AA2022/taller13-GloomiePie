@@ -57,7 +57,31 @@ public class Principal {
         c.establecerUserName(e.obtenerUserName());
         c.establecerCorreo();
         
+        Correo c2 = new Correo();
+        c2.establecerDominio(dom);
+        c2.establecerUserName(e.obtenerUserName());
+        c2.establecerCorreo();
+        
+        Correo c3 = new Correo();
+        c3.establecerDominio(dom2);
+        c3.establecerUserName(e.obtenerUserName());
+        c3.establecerCorreo();
+        
+        Correo c4 = new Correo();
+        c4.establecerDominio(dom3);
+        c4.establecerUserName(e.obtenerUserName());
+        c4.establecerCorreo();
+        
+        Correo c5 = new Correo();
+        c5.establecerDominio(dom4);
+        c5.establecerUserName(e.obtenerUserName());
+        c5.establecerCorreo();
+        
         lista.add(c);
+        lista.add(c2);
+        lista.add(c3);
+        lista.add(c4);
+        lista.add(c5);
         
         e.establecerCorreos(lista);
         
