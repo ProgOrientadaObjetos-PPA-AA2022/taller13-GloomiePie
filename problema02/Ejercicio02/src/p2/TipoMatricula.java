@@ -7,43 +7,88 @@ package p2;
 
 import p1.MatriculaCampamento;
 import p1.MatriculaColegio;
+import p1.MatriculaEscuela;
+import p1.MatriculaJardin;
+import p1.MatriculaMaternal;
 
 /**
  *
  * @author reroes
  */
 public class TipoMatricula {
+
     private double promedioMatriculas;
     private MatriculaCampamento campamento;
     private MatriculaColegio colegio;
-    // private MatriculaEscuela escuela;
-    // private MatriculaJardin jardin;
-    // private MatriculaMaternal maternal;
-    // private MatriculaMaternal maternal2;
-    
-    public void establecerMatriculaCampamento(MatriculaCampamento c){
+    private MatriculaEscuela escuela;
+    private MatriculaJardin jardin;
+    private MatriculaMaternal maternal;
+    private MatriculaMaternal maternal2;
+
+    public void establecerMatriculaCampamento(MatriculaCampamento c) {
         campamento = c;
     }
-    
-    public void establecerMatriculaColegio(MatriculaColegio c){
+
+    public void establecerMatriculaColegio(MatriculaColegio c) {
         colegio = c;
     }
-    
-    public MatriculaCampamento obtenerMatriculaCampamento(){
+
+    public MatriculaCampamento obtenerMatriculaCampamento() {
         return campamento;
     }
-    
-    public MatriculaColegio obtenerMatriculaColegio(){
+
+    public MatriculaColegio obtenerMatriculaColegio() {
         return colegio;
     }
-    
-    public void establecerPromedioTarifas(){
-        promedioMatriculas = (obtenerMatriculaCampamento().obtenerTarifa() + 
-                obtenerMatriculaColegio().obtenerTarifa())/2;
-        
+
+    public void establecerMatriculaEscuela(MatriculaEscuela c) {
+        escuela = c;
     }
-    
-    public double obtenerPromedioTarifas(){
+
+    public void establecerMatriculaJardin(MatriculaJardin c) {
+        jardin = c;
+    }
+
+    public void establecerMatriculaMaternal(MatriculaMaternal c) {
+        maternal = c;
+    }
+
+    public MatriculaEscuela obtenerMatriculaEscuela() {
+        return escuela;
+    }
+
+    public MatriculaJardin obtenerMatriculaJardin() {
+        return jardin;
+    }
+
+    public MatriculaMaternal obtenerMatriculaMaternal() {
+        return maternal;
+    }
+
+    public void establecerPromedioTarifas() {
+        promedioMatriculas = (obtenerMatriculaCampamento().obtenerTarifa()
+                + obtenerMatriculaColegio().obtenerTarifa()
+                + obtenerMatriculaEscuela().obtenerTarifa()
+                + obtenerMatriculaJardin().obtenerTarifa() +
+                obtenerMatriculaMaternal().obtenerTarifa()) / 5;
+
+    }
+
+    public double obtenerPromedioTarifas() {
         return promedioMatriculas;
     }
+
+    /*@Override
+    public String toString(){
+    String cadena = String.format("MATRICULAS\n"
+    + "Matricula campamento: %.2f\n"
+    + "Matricula colegio: %.2f\n"
+    + "MAtricula escuela: %.2f\n"
+    + "Promedio: %.2f\n",
+    campamento.obtenerTarifa(),
+    colegio.obtenerTarifa(),
+    promedioMatriculas);
+    
+    return cadena;
+    }*/
 }

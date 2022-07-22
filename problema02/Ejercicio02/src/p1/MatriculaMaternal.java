@@ -9,16 +9,17 @@ package p1;
  *
  * @author reroes
  */
-public class MatriculaMaternal {
-    private double tarifa;
+public class MatriculaMaternal extends Matricula{
     
-        
+    @Override
     public void establecerTarifa(){
         // tarifa = costo desayunos + costo almuerzo + costo medico
         tarifa = 50.2 + 40.2 + 80.2;
     }
-        
-    public double obtenerTarifa(){
-        return tarifa;
+       
+    @Override
+    public String toString(){
+       return String.format("Matricula maternal: %.2f\n",
+       tarifa);
     }
 }
